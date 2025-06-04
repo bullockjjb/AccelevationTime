@@ -9,7 +9,7 @@ class MainMenuScene extends Phaser.Scene {
       fontSize: '18px',
       color: '#FFA500'
     }).setOrigin(0.5);
-    const start = this.add.text(GAME_WIDTH/2, GAME_HEIGHT/2 + 20, 'Press Space to Start', {
+    const start = this.add.text(GAME_WIDTH/2, GAME_HEIGHT/2 + 20, 'Press Any Key to Start', {
       fontFamily: 'Press Start 2P',
       fontSize: '12px',
       color: '#FFA500'
@@ -19,8 +19,7 @@ class MainMenuScene extends Phaser.Scene {
       fontSize: '12px',
       color: '#FFA500'
     }).setOrigin(0.5);
-    this.startKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    this.startKey.on('down', () => {
+    this.input.keyboard.once('keydown', () => {
       this.scene.start('LevelScene', { levelKey: 'level1' });
     });
   }

@@ -16,6 +16,7 @@ class BootScene extends Phaser.Scene {
     this.load.image('ladder', LADDER_PNG);
     this.load.image('player', PLAYER_PNG);
     this.load.image('component', COMPONENT_PNG);
+    this.load.image('rogueAI', 'https://chatgpt.com/s/m_683f9c71c6008191a88a909d40b928aa');
     this.load.image(
       'logo',
       'https://www.accelevationllc.com/uploads/_1200x630_fit_center-center_82_none/Accelevation-Logo.jpg?mtime=1725471630'

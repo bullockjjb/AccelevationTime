@@ -32,6 +32,25 @@ class LevelScene extends Phaser.Scene {
     });
     this.physics.add.overlap(this.components, this.platforms, null, null, this); // to stop at bottom
 
+    // enemies
+    this.enemies = this.physics.add.group();
+    if (data.enemies) {
+      data.enemies.forEach(e => {
+        let enemy;
+        if (e.type === 'RogueForklift') {
+          enemy = new RogueForklift(this, e.x, e.y);
+        } else if (e.type === 'RogueAI') {
+          enemy = new RogueAI(this, e.x, e.y);
+        }
+        if (enemy) this.enemies.add(enemy.sprite);
+      });
+    }
+
+    this.physics.add.collider(this.enemies, this.platforms);
+    this.physics.add.overlap(this.player.sprite, this.enemies, () => {
+      this.player.sprite.setPosition(GAME_WIDTH/2, data.platforms[0].y - 50);
+    });
+
     this.demand = data.demand;
     this.score = 0;
 
@@ -43,5 +62,10 @@ class LevelScene extends Phaser.Scene {
     this.components.children.iterate(obj => {
       if(obj.getData('ref')) obj.getData('ref').update();
     });
+    if (this.enemies) {
+      this.enemies.children.iterate(obj => {
+        if (obj.getData('ref')) obj.getData('ref').update();
+      });
+    }
   }
 }

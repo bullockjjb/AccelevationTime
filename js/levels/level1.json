@@ -13,6 +13,7 @@
     {"type":"Accessory","x":600,"y":200,"column":0}
   ],
   "enemies":[
+    {"type":"RogueAI","x":700,"y":500}
   ],
   "demand":1
 }
