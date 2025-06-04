@@ -1,0 +1,5 @@
+const GAME_WIDTH = 800;
+const GAME_HEIGHT = 600;
+const PLAYER_SPEED = 150;
+const CLIMB_SPEED = 100;
+const COMPONENT_FALL_SPEED = 200;
