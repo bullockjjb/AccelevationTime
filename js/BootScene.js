@@ -16,6 +16,10 @@ class BootScene extends Phaser.Scene {
     this.load.image('ladder', LADDER_PNG);
     this.load.image('player', PLAYER_PNG);
     this.load.image('component', COMPONENT_PNG);
+    this.load.image(
+      'logo',
+      'https://www.accelevationllc.com/uploads/_1200x630_fit_center-center_82_none/Accelevation-Logo.jpg?mtime=1725471630'
+    );
     this.load.json('level1', 'js/levels/level1.json');
   }
   create() {
