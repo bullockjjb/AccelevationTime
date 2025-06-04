@@ -19,8 +19,9 @@ class MainMenuScene extends Phaser.Scene {
       fontSize: '12px',
       color: '#FFA500'
     }).setOrigin(0.5);
-    this.input.keyboard.once('keydown-SPACE', () => {
-      this.scene.start('LevelScene', {levelKey:'level1'});
+    this.startKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    this.startKey.on('down', () => {
+      this.scene.start('LevelScene', { levelKey: 'level1' });
     });
   }
 }

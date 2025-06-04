@@ -10,7 +10,8 @@ class LevelScene extends Phaser.Scene {
     // platforms
     this.platforms = this.physics.add.staticGroup();
     data.platforms.forEach(p => {
-      const plat = this.add.image((p.xEnd+p.xStart)/2, p.y, 'platform');
+      const width = p.xEnd - p.xStart;
+      const plat = this.add.tileSprite((p.xEnd + p.xStart) / 2, p.y, width, 16, 'platform');
       this.physics.add.existing(plat, true);
       this.platforms.add(plat);
     });
