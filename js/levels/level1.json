@@ -1,0 +1,18 @@
+{
+  "platforms":[
+    {"y":500,"xStart":0,"xEnd":800},
+    {"y":350,"xStart":0,"xEnd":800},
+    {"y":200,"xStart":0,"xEnd":800}
+  ],
+  "components":[
+    {"type":"Frame","x":100,"y":500,"column":0},
+    {"type":"Cage","x":200,"y":500,"column":0},
+    {"type":"Glass","x":300,"y":350,"column":0},
+    {"type":"Whip","x":400,"y":350,"column":0},
+    {"type":"Shelf","x":500,"y":200,"column":0},
+    {"type":"Accessory","x":600,"y":200,"column":0}
+  ],
+  "enemies":[
+  ],
+  "demand":1
+}
